@@ -6,4 +6,6 @@ CMakeFiles/test1.dir/src/api.c.o
  src/include/api.h
 CMakeFiles/test1.dir/communication.cpp.o
  /home/hOwOka/R_Pi_Src/dogo/communication.cpp
+ src/include/QuadrupedRobotObject.h
  src/include/api.h
+ src/include/data_struct.h

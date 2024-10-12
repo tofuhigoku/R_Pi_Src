@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.0)
 project (test1)
 
-# set(PROJECTS_LINK_LIBS glfw GLEW GL GLU)
-# link_directories( /usr/lib)
+# set(PROJECTS_LINK_LIBS )
+# link_directories( /usr/include)
 
 set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -lpthread -lrt")
 
@@ -16,4 +16,4 @@ file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 # set(SOURCES)
 
 add_executable(test1 ${SOURCES} ${SOURCES1})
-# target_link_libraries(GL_Texture ${PROJECTS_LINK_LIBS})
+# target_link_libraries(test1 ${PROJECTS_LINK_LIBS})

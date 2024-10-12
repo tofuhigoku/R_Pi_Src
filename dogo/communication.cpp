@@ -16,7 +16,9 @@
 
 extern "C" {
 #include "api.h"
+#include "data_struct.h"
 }
+#include "QuadrupedRobotObject.h"
 
 spi_buffer spi_buffer_st = {0};
 int fd0, fd1;

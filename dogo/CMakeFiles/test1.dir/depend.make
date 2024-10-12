@@ -5,5 +5,7 @@ CMakeFiles/test1.dir/src/api.c.o: src/api.c
 CMakeFiles/test1.dir/src/api.c.o: src/include/api.h
 
 CMakeFiles/test1.dir/communication.cpp.o: communication.cpp
+CMakeFiles/test1.dir/communication.cpp.o: src/include/QuadrupedRobotObject.h
 CMakeFiles/test1.dir/communication.cpp.o: src/include/api.h
+CMakeFiles/test1.dir/communication.cpp.o: src/include/data_struct.h
 
