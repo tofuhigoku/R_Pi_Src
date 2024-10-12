@@ -20,11 +20,25 @@
 #define SPI_DATA_LEN    132
 #define SPI_SPEED       3200000     // 4mhz
 
+typedef enum
+{
+
+    MS_RETURN_OK = 0,
+	MS_RETURN_NULLPTR,
+	MS_RETURN_INVALID,
+	MS_RETURN_FAIL,
+	MS_RETURN_NOT_SUPPORTED,
+}MS_enum_return ;
+
 typedef struct 
 {
     uint8_t tx_buffer[SPI_DATA_LEN];
     uint8_t rx_buffer[SPI_DATA_LEN];
 
 } spi_buffer;
+
+MS_enum_return spi_device_init(int* p_fd);
+MS_enum_return spi_device_TransmitReceive(int fd, struct spi_ioc_transfer* p_spi_ioc_transfer, int* NumOfsuccessBytes);
+
 
 #endif

@@ -14,14 +14,10 @@
 #include <linux/types.h>
 #include <linux/spi/spidev.h>
 
+extern "C" {
 #include "api.h"
+}
 
-// #define SPI_DATA_LEN    132
-// #define SPI_SPEED       3200000     // 4mhz
-
-
-// uint8_t tx_buffer[SPI_DATA_LEN];
-// uint8_t rx_buffer[SPI_DATA_LEN];
 spi_buffer spi_buffer_st = {0};
 int fd0, fd1;
 
@@ -50,54 +46,21 @@ int main( int argc, char** argv)
 
     for(int i = 0; i < SPI_DATA_LEN; i++) {
         spi_buffer_st.tx_buffer[i] = i;
-        // rx_buffer[i] = 0xFF;
     }
 
-    fd0 = open(SPI_DEVICE0, O_RDWR);
-    if(fd0 < 0) {
-        printf("Could not open the SPI device...\r\n");
+    if(spi_device_init(&fd0) != MS_RETURN_OK)
+    {
         exit(EXIT_FAILURE);
     }
 
-    ret = ioctl(fd0, SPI_IOC_RD_MODE32, &scratch32);
-    if(ret != 0) {
-        printf("Could not read SPI mode...\r\n");
-        close(fd0);
-        exit(EXIT_FAILURE);
-    }
-
-    scratch32 |= SPI_MODE_0;
-
-    ret = ioctl(fd0, SPI_IOC_WR_MODE32, &scratch32);
-    if(ret != 0) {
-        printf("Could not write SPI mode...\r\n");
-        close(fd0);
-        exit(EXIT_FAILURE);
-    }
-
-    ret = ioctl(fd0, SPI_IOC_RD_MAX_SPEED_HZ, &scratch32);
-    if(ret != 0) {
-        printf("Could not read the SPI max speed...\r\n");
-        close(fd0);
-        exit(EXIT_FAILURE);
-    }
-
-    scratch32 = SPI_SPEED;
-
-    ret = ioctl(fd0, SPI_IOC_WR_MAX_SPEED_HZ, &scratch32);
-    if(ret != 0) {
-        printf("Could not write the SPI max speed...\r\n");
-        close(fd0);
-        exit(EXIT_FAILURE);
-    }
     uint8_t c =0;
     while (1)
     {
         /* code */
         spi_buffer_st.tx_buffer[0] = c++;
         spi_buffer_st.tx_buffer[SPI_DATA_LEN-1] = c++;
-        ret = ioctl(fd0, SPI_IOC_MESSAGE(1), &trx);
-        if(ret != SPI_DATA_LEN) {
+        ret = spi_device_TransmitReceive(fd0, &trx, NULL);
+        if(ret != MS_RETURN_OK) {
             printf("SPI transfer returned %d...\r\n", ret);
             break;
         }

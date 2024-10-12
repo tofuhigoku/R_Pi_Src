@@ -6,37 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/hOwOka/R_Pi_Src/dogo/communication.cpp
-iostream
--
-string
--
-stdio.h
-/home/hOwOka/R_Pi_Src/dogo/stdio.h
-stdlib.h
-/home/hOwOka/R_Pi_Src/dogo/stdlib.h
-stdint.h
--
-string.h
-/home/hOwOka/R_Pi_Src/dogo/string.h
-errno.h
--
-fcntl.h
--
-unistd.h
--
-sys/ioctl.h
--
-sys/stat.h
--
-linux/ioctl.h
--
-linux/types.h
--
-linux/spi/spidev.h
--
+/home/hOwOka/R_Pi_Src/dogo/src/api.c
 api.h
-/home/hOwOka/R_Pi_Src/dogo/api.h
+/home/hOwOka/R_Pi_Src/dogo/src/api.h
 
 src/include/api.h
 stdio.h

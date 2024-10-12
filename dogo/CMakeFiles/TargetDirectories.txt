@@ -1,1 +1,1 @@
-/home/hOwOka/dogo/CMakeFiles/test1.dir
+/home/hOwOka/R_Pi_Src/dogo/CMakeFiles/test1.dir

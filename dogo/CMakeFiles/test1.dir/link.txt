@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall -std=c++11 -lpthread -lrt   CMakeFiles/test1.dir/communication.cpp.o  -o test1 -rdynamic 
+/usr/bin/c++   -Wall -std=c++11 -lpthread -lrt   CMakeFiles/test1.dir/communication.cpp.o CMakeFiles/test1.dir/src/api.c.o  -o test1 -rdynamic 

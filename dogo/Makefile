@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hOwOka/dogo
+CMAKE_SOURCE_DIR = /home/hOwOka/R_Pi_Src/dogo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hOwOka/dogo
+CMAKE_BINARY_DIR = /home/hOwOka/R_Pi_Src/dogo
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hOwOka/dogo/CMakeFiles /home/hOwOka/dogo/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hOwOka/R_Pi_Src/dogo/CMakeFiles /home/hOwOka/R_Pi_Src/dogo/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hOwOka/dogo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hOwOka/R_Pi_Src/dogo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ communication.cpp.s:
 	$(MAKE) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/communication.cpp.s
 .PHONY : communication.cpp.s
 
+src/api.o: src/api.c.o
+
+.PHONY : src/api.o
+
+# target to build an object file
+src/api.c.o:
+	$(MAKE) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/src/api.c.o
+.PHONY : src/api.c.o
+
+src/api.i: src/api.c.i
+
+.PHONY : src/api.i
+
+# target to preprocess a source file
+src/api.c.i:
+	$(MAKE) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/src/api.c.i
+.PHONY : src/api.c.i
+
+src/api.s: src/api.c.s
+
+.PHONY : src/api.s
+
+# target to generate assembly for a file
+src/api.c.s:
+	$(MAKE) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/src/api.c.s
+.PHONY : src/api.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... communication.o"
 	@echo "... communication.i"
 	@echo "... communication.s"
+	@echo "... src/api.o"
+	@echo "... src/api.i"
+	@echo "... src/api.s"
 .PHONY : help
 
 

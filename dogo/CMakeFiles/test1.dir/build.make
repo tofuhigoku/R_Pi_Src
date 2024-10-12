@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hOwOka/dogo
+CMAKE_SOURCE_DIR = /home/hOwOka/R_Pi_Src/dogo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hOwOka/dogo
+CMAKE_BINARY_DIR = /home/hOwOka/R_Pi_Src/dogo
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test1.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/test1.dir/flags.make
 
 CMakeFiles/test1.dir/communication.cpp.o: CMakeFiles/test1.dir/flags.make
 CMakeFiles/test1.dir/communication.cpp.o: communication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hOwOka/dogo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test1.dir/communication.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test1.dir/communication.cpp.o -c /home/hOwOka/dogo/communication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hOwOka/R_Pi_Src/dogo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test1.dir/communication.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test1.dir/communication.cpp.o -c /home/hOwOka/R_Pi_Src/dogo/communication.cpp
 
 CMakeFiles/test1.dir/communication.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test1.dir/communication.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hOwOka/dogo/communication.cpp > CMakeFiles/test1.dir/communication.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hOwOka/R_Pi_Src/dogo/communication.cpp > CMakeFiles/test1.dir/communication.cpp.i
 
 CMakeFiles/test1.dir/communication.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test1.dir/communication.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hOwOka/dogo/communication.cpp -o CMakeFiles/test1.dir/communication.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hOwOka/R_Pi_Src/dogo/communication.cpp -o CMakeFiles/test1.dir/communication.cpp.s
 
 CMakeFiles/test1.dir/communication.cpp.o.requires:
 
@@ -81,17 +81,43 @@ CMakeFiles/test1.dir/communication.cpp.o.provides: CMakeFiles/test1.dir/communic
 CMakeFiles/test1.dir/communication.cpp.o.provides.build: CMakeFiles/test1.dir/communication.cpp.o
 
 
+CMakeFiles/test1.dir/src/api.c.o: CMakeFiles/test1.dir/flags.make
+CMakeFiles/test1.dir/src/api.c.o: src/api.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hOwOka/R_Pi_Src/dogo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/test1.dir/src/api.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test1.dir/src/api.c.o   -c /home/hOwOka/R_Pi_Src/dogo/src/api.c
+
+CMakeFiles/test1.dir/src/api.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test1.dir/src/api.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hOwOka/R_Pi_Src/dogo/src/api.c > CMakeFiles/test1.dir/src/api.c.i
+
+CMakeFiles/test1.dir/src/api.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test1.dir/src/api.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hOwOka/R_Pi_Src/dogo/src/api.c -o CMakeFiles/test1.dir/src/api.c.s
+
+CMakeFiles/test1.dir/src/api.c.o.requires:
+
+.PHONY : CMakeFiles/test1.dir/src/api.c.o.requires
+
+CMakeFiles/test1.dir/src/api.c.o.provides: CMakeFiles/test1.dir/src/api.c.o.requires
+	$(MAKE) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/src/api.c.o.provides.build
+.PHONY : CMakeFiles/test1.dir/src/api.c.o.provides
+
+CMakeFiles/test1.dir/src/api.c.o.provides.build: CMakeFiles/test1.dir/src/api.c.o
+
+
 # Object files for target test1
 test1_OBJECTS = \
-"CMakeFiles/test1.dir/communication.cpp.o"
+"CMakeFiles/test1.dir/communication.cpp.o" \
+"CMakeFiles/test1.dir/src/api.c.o"
 
 # External object files for target test1
 test1_EXTERNAL_OBJECTS =
 
 test1: CMakeFiles/test1.dir/communication.cpp.o
+test1: CMakeFiles/test1.dir/src/api.c.o
 test1: CMakeFiles/test1.dir/build.make
 test1: CMakeFiles/test1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hOwOka/dogo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hOwOka/R_Pi_Src/dogo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +126,7 @@ CMakeFiles/test1.dir/build: test1
 .PHONY : CMakeFiles/test1.dir/build
 
 CMakeFiles/test1.dir/requires: CMakeFiles/test1.dir/communication.cpp.o.requires
+CMakeFiles/test1.dir/requires: CMakeFiles/test1.dir/src/api.c.o.requires
 
 .PHONY : CMakeFiles/test1.dir/requires
 
@@ -108,6 +135,6 @@ CMakeFiles/test1.dir/clean:
 .PHONY : CMakeFiles/test1.dir/clean
 
 CMakeFiles/test1.dir/depend:
-	cd /home/hOwOka/dogo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hOwOka/dogo /home/hOwOka/dogo /home/hOwOka/dogo /home/hOwOka/dogo /home/hOwOka/dogo/CMakeFiles/test1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hOwOka/R_Pi_Src/dogo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hOwOka/R_Pi_Src/dogo /home/hOwOka/R_Pi_Src/dogo /home/hOwOka/R_Pi_Src/dogo /home/hOwOka/R_Pi_Src/dogo /home/hOwOka/R_Pi_Src/dogo/CMakeFiles/test1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test1.dir/depend
 
