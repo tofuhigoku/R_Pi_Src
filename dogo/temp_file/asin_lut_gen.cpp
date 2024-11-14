@@ -35,14 +35,24 @@ int main(int argc, char** argv)
     //     cout << "glm::acos((double) " << var << " : " << asin_lut[i] << endl;
     // }
 
-    glm::mat4 B{
-        {0, 1, 2, 3},
-        {4, 5, 6, 7},
-        {8, 9, 10, 11},
-        {12, 13, 14, 15}};
+    glm::mat3x3 B = glm::transpose(glm::mat3x3{
+        {0, 1, 2},
+        {4, 5, 6},
+        {8, 9, 10},
+        });
+
+    glm::mat3x3 C = glm::transpose(glm::mat3x3{
+        {0, 1, 2},
+        {3, 3, 3},
+        {4, 5, 6},
+    });
     // glm::acos( (double) x);
     printf("hello world!\n");
-    cout << glm::transpose(B) << endl;
+    cout << B << endl;
+    cout << C << endl;
+    cout << B*C << endl;
+
+    cout << glm::pi<double>() << endl;
     cout << glm::mat4(1.0) << endl;
     return 0;
 }
