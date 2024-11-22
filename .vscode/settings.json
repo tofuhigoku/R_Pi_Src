@@ -3,6 +3,7 @@
         "string.h": "c",
         "stdlib.h": "c",
         "stdint.h": "c",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cmath": "cpp"
     }
 }

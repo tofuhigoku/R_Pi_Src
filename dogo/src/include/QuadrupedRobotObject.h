@@ -240,8 +240,55 @@ int QuadrupedRobotObject::R_Leg_FK_Rside( glm::vec3 Vec3_LegJoints_Pos, glm::vec
 
 int QuadrupedRobotObject::R_Leg_IK_Lside( glm::vec3 & Vec3_LegJoints_Pos, glm::vec3 Vec3_Foot_Pos)
 {
+    float x = Vec3_Foot_Pos.x;
+    float y = Vec3_Foot_Pos.y;
+    float z = Vec3_Foot_Pos.z;
 
+    float OD = glm::sqrt(y*y + z*z);
+    // float z_new = - glm::sqrt(y*y + z*z - RobotDimension.OA*RobotDimension.OA);
+    float AC_square = x*x + (y*y + z*z - RobotDimension.OA*RobotDimension.OA);
+    float AB_square = RobotDimension.AB*RobotDimension.AB;
+    float BC_square = RobotDimension.BC*RobotDimension.BC;
+    float AC = glm::sqrt(AC_square);
 
+    /* Calculate q1*/
+    float q1 = 0.0f;
+    {
+        float alpha = glm::acos(y/OD);
+        float beta  = glm::acos(RobotDimension.OA/OD);
+        if(y>=0)
+        {
+            q1 = glm::abs(alpha) - glm::abs(beta);
+        }
+        else
+        {
+            q1 = _PI - glm::abs(alpha) - glm::abs(beta);
+        }
+    }
+
+    /* Calculate q2*/
+    float q2 = 0.0f;
+    {
+        float PHI = glm::acos(x/AC);
+        float phi = glm::acos((AB_square + AC_square - BC_square) /(2*RobotDimension.AB*AC));
+
+        if(x<0)
+        {
+            q2 = -_PI_2 + glm::abs(PHI) - glm::abs(phi);
+        }
+        else
+        {
+            q2 = _PI_2 - glm::abs(PHI) - glm::abs(phi);
+        }
+    }
+
+    /* Calculate q3*/
+    float q3 = 0.0f;
+
+    /* assign value to joints*/
+    Vec3_LegJoints_Pos[0] = q1;
+    Vec3_LegJoints_Pos[1] = _PI - q2;
+    Vec3_LegJoints_Pos[2] = q3;
 
 }
 int QuadrupedRobotObject::R_Leg_IK_Rside( glm::vec3 & Vec3_LegJoints_Pos, glm::vec3 Vec3_Foot_Pos)
@@ -250,46 +297,55 @@ int QuadrupedRobotObject::R_Leg_IK_Rside( glm::vec3 & Vec3_LegJoints_Pos, glm::v
     float y = Vec3_Foot_Pos.y;
     float z = Vec3_Foot_Pos.z;
 
+
     float OD = glm::sqrt(y*y + z*z);
+    // float z_new = - glm::sqrt(y*y + z*z - RobotDimension.OA*RobotDimension.OA);
+    float AC_square = x*x + (y*y + z*z - RobotDimension.OA*RobotDimension.OA);
+    float AB_square = RobotDimension.AB*RobotDimension.AB;
+    float BC_square = RobotDimension.BC*RobotDimension.BC;
+    float AC = glm::sqrt(AC_square);
 
-    float alpha = glm::acos(y/OD);
-    float beta  = glm::acos(RobotDimension.OA/OD);
-
+    /* Calculate q1*/
     float q1 = 0.0f;
-    if(y<0)
     {
-        q1 = glm::abs(alpha) - glm::abs(beta);
-    }
-    else
-    {
-        q1 = _PI - glm::abs(alpha) - glm::abs(beta);
+        float alpha = glm::acos(y/OD);
+        float beta  = glm::acos(RobotDimension.OA/OD);
+
+        if(y<0)
+        {
+            q1 = glm::abs(alpha) - glm::abs(beta);
+        }
+        else
+        {
+            q1 = _PI - glm::abs(alpha) - glm::abs(beta);
+        }
     }
     
-    float z_new = - glm::sqrt(y*y + z*z - RobotDimension.OA*RobotDimension.OA);
-    float AC = glm::sqrt(x*x + z_new*z_new);
-    float PHI = glm::acos(x/AC);
-    float phi = glm::acos((RobotDimension.AB*RobotDimension.AB + AC*AC - RobotDimension.BC*RobotDimension.BC)
-                            /(2*RobotDimension.AB*AC));
-
+    /* Calculate q2*/
     float q2 = 0.0f;
-    if(x<0)
     {
-        q2 = -_PI_2 + glm::abs(PHI) - glm::abs(phi);
-    }
-    else
-    {
-        q2 = _PI_2 - glm::abs(PHI) - glm::abs(phi);
+        float PHI = glm::acos(x/AC);
+        float phi = glm::acos((AB_square + AC_square - BC_square) /(2*RobotDimension.AB*AC));
+
+        if(x<0)
+        {
+            q2 = -_PI_2 + glm::abs(PHI) - glm::abs(phi);
+        }
+        else
+        {
+            q2 = _PI_2 - glm::abs(PHI) - glm::abs(phi);
+        }
     }
 
+    /* Calculate q3*/
     float q3 =  glm::abs(
-                glm::acos(-(RobotDimension.AB*RobotDimension.AB + RobotDimension.BC*RobotDimension.BC - AC*AC)
-                            /(2*RobotDimension.AB*RobotDimension.BC))
-                );
+                glm::acos(-(AB_square + BC_square - AC_square) /(2*RobotDimension.AB*RobotDimension.BC)));
 
     // float t21 = q1;
     // float t22 = _PI + q2;
     // float t23 = q3;
 
+    /* assign value to joints*/
     Vec3_LegJoints_Pos[0] = q1;
     Vec3_LegJoints_Pos[1] = _PI + q2;
     Vec3_LegJoints_Pos[2] = q3;
