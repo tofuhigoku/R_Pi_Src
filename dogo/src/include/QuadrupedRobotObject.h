@@ -25,21 +25,27 @@
 #define _PI_2               3.141592653589793/2
 #define _PI_3               3.141592653589793/3
 
+#define _2PI                 3.141592653589793*2
+
 using namespace std;
 
 typedef struct
 {
 	/* data */
-	leg_data_t	leg1;
-	leg_data_t	leg2;
-	leg_data_t	leg3;
-	leg_data_t	leg4;
+	leg_data_t	current_state;
 
 	/* command */
-	leg_control_t leg1;
-	leg_control_t leg2;
-	leg_control_t leg3;
-	leg_control_t leg4;
+	leg_control_t desired_state;
+
+	
+} Leg_t;
+typedef struct
+{
+
+	Leg_t	leg1;
+	Leg_t	leg2;
+	Leg_t	leg3;
+	Leg_t	leg4;
 	
 } RobotLeg_t;
 
@@ -136,7 +142,14 @@ private:
     glm::mat4 T_h3_31 = glm::mat4(1.0);
     glm::mat4 T_h4_41 = glm::mat4(1.0);
 
+    float T_cycle;
+    float t_cycle;
     /* private methods */
+    float update_T_cycle(float _T_cycle);
+    float get_T_cycle();
+    float update_t_cycle(float _t_cycle);
+    float get_t_cycle();
+
     int R_RobotInertial_Init();
     
     int R_Leg_FK_Lside( glm::vec3 Vec3_LegJoints_Pos, glm::vec3 & Vec3_Foot_Pos);
@@ -157,10 +170,14 @@ public:
     spi_data_t      spi_device1_data;
 
     RobotLeg_t RobotLeg;
-
+    glm::vec3 foot_step;
     /* method */
     QuadrupedRobotObject(/* args */);
     ~QuadrupedRobotObject();
+
+    void generate_Body_state();
+    void generate_Crawling_gait();
+    void generate_Trotting_gait();
 
     int R_All_Leg_FK();
     int R_All_Leg_IK();
@@ -175,6 +192,26 @@ QuadrupedRobotObject::QuadrupedRobotObject(/* args */)
 QuadrupedRobotObject::~QuadrupedRobotObject()
 {
 }
+
+float QuadrupedRobotObject::update_T_cycle(float _T_cycle)
+{
+    T_cycle = _T_cycle;
+    return T_cycle;
+}
+float QuadrupedRobotObject::get_T_cycle()
+{
+    return T_cycle;
+}
+float QuadrupedRobotObject::update_t_cycle(float _t_cycle)
+{
+    t_cycle = _t_cycle;
+    return t_cycle;
+}
+float QuadrupedRobotObject::get_t_cycle()
+{
+    return t_cycle;
+}
+
 
 int QuadrupedRobotObject::R_Leg_FK_Lside( glm::vec3 Vec3_LegJoints_Pos, glm::vec3 & Vec3_Foot_Pos)
 {
@@ -283,12 +320,13 @@ int QuadrupedRobotObject::R_Leg_IK_Lside( glm::vec3 & Vec3_LegJoints_Pos, glm::v
     }
 
     /* Calculate q3*/
-    float q3 = 0.0f;
+    float q3 =  glm::abs(
+                glm::acos(-(AB_square + BC_square - AC_square) /(2*RobotDimension.AB*RobotDimension.BC)));
 
     /* assign value to joints*/
     Vec3_LegJoints_Pos[0] = q1;
     Vec3_LegJoints_Pos[1] = _PI - q2;
-    Vec3_LegJoints_Pos[2] = q3;
+    Vec3_LegJoints_Pos[2] = _2PI - q3;
 
 }
 int QuadrupedRobotObject::R_Leg_IK_Rside( glm::vec3 & Vec3_LegJoints_Pos, glm::vec3 Vec3_Foot_Pos)
@@ -341,13 +379,22 @@ int QuadrupedRobotObject::R_Leg_IK_Rside( glm::vec3 & Vec3_LegJoints_Pos, glm::v
     float q3 =  glm::abs(
                 glm::acos(-(AB_square + BC_square - AC_square) /(2*RobotDimension.AB*RobotDimension.BC)));
 
-    // float t21 = q1;
-    // float t22 = _PI + q2;
-    // float t23 = q3;
-
     /* assign value to joints*/
     Vec3_LegJoints_Pos[0] = q1;
     Vec3_LegJoints_Pos[1] = _PI + q2;
     Vec3_LegJoints_Pos[2] = q3;
+}
+
+void QuadrupedRobotObject::generate_Body_state()
+{
+    /* In construction*/
+}
+void QuadrupedRobotObject::generate_Crawling_gait()
+{
+    /* In construction*/
+}
+void QuadrupedRobotObject::generate_Trotting_gait()
+{
+    /* In construction*/
 }
 #endif

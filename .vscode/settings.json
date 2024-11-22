@@ -4,6 +4,8 @@
         "stdlib.h": "c",
         "stdint.h": "c",
         "ostream": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "limits": "cpp",
+        "type_traits": "cpp"
     }
 }
