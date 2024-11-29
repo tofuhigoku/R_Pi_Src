@@ -129,29 +129,29 @@ test1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/build
 .PHONY : test1/fast
 
-generate_cawl_gait_plot.o: generate_cawl_gait_plot.cpp.o
-.PHONY : generate_cawl_gait_plot.o
+generate_trot_gait_plot.o: generate_trot_gait_plot.cpp.o
+.PHONY : generate_trot_gait_plot.o
 
 # target to build an object file
-generate_cawl_gait_plot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o
-.PHONY : generate_cawl_gait_plot.cpp.o
+generate_trot_gait_plot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/generate_trot_gait_plot.cpp.o
+.PHONY : generate_trot_gait_plot.cpp.o
 
-generate_cawl_gait_plot.i: generate_cawl_gait_plot.cpp.i
-.PHONY : generate_cawl_gait_plot.i
+generate_trot_gait_plot.i: generate_trot_gait_plot.cpp.i
+.PHONY : generate_trot_gait_plot.i
 
 # target to preprocess a source file
-generate_cawl_gait_plot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.i
-.PHONY : generate_cawl_gait_plot.cpp.i
+generate_trot_gait_plot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/generate_trot_gait_plot.cpp.i
+.PHONY : generate_trot_gait_plot.cpp.i
 
-generate_cawl_gait_plot.s: generate_cawl_gait_plot.cpp.s
-.PHONY : generate_cawl_gait_plot.s
+generate_trot_gait_plot.s: generate_trot_gait_plot.cpp.s
+.PHONY : generate_trot_gait_plot.s
 
 # target to generate assembly for a file
-generate_cawl_gait_plot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.s
-.PHONY : generate_cawl_gait_plot.cpp.s
+generate_trot_gait_plot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/generate_trot_gait_plot.cpp.s
+.PHONY : generate_trot_gait_plot.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test1"
-	@echo "... generate_cawl_gait_plot.o"
-	@echo "... generate_cawl_gait_plot.i"
-	@echo "... generate_cawl_gait_plot.s"
+	@echo "... generate_trot_gait_plot.o"
+	@echo "... generate_trot_gait_plot.i"
+	@echo "... generate_trot_gait_plot.s"
 .PHONY : help
 
 

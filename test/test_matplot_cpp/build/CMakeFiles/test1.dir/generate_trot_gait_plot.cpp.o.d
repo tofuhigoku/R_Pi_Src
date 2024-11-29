@@ -1,5 +1,5 @@
-CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: \
- /home/ms/R_Pi_Src/test/test_matplot_cpp/generate_cawl_gait_plot.cpp \
+CMakeFiles/test1.dir/generate_trot_gait_plot.cpp.o: \
+ /home/ms/R_Pi_Src/test/test_matplot_cpp/generate_trot_gait_plot.cpp \
  /usr/include/stdc-predef.h \
  /home/ms/R_Pi_Src/test/test_matplot_cpp/../../dogo/src/include/data_struct.h \
  /usr/include/stdio.h \
