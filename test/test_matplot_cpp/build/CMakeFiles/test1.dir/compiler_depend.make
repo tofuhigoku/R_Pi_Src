@@ -5,7 +5,7 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
   /home/ms/R_Pi_Src/dogo/src/include/QuadrupedRobotObject.h \
   /home/ms/R_Pi_Src/dogo/src/include/api.h \
   /home/ms/R_Pi_Src/dogo/src/include/data_struct.h \
-  /home/ms/R_Pi_Src/test/test_matplot_cpp/matplotlibcpp.h \
+  /home/ms/R_Pi_Src/dogo/src/include/matplotlibcpp.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1128,10 +1128,6 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 
 /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/xmmintrin.h:
-
-/usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/9/include/mm_malloc.h:
 
 /usr/include/c++/9/bits/refwrap.h:
@@ -1236,8 +1232,6 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 
 /usr/include/glm/ext/vector_int3_precision.hpp:
 
-/usr/include/c++/9/bits/istream.tcc:
-
 /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
 
 /usr/include/c++/9/ext/string_conversions.h:
@@ -1302,7 +1296,9 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 
 /usr/include/asm-generic/errno.h:
 
-/home/ms/R_Pi_Src/test/test_matplot_cpp/matplotlibcpp.h:
+/usr/include/c++/9/bits/istream.tcc:
+
+/usr/include/c++/9/bits/locale_classes.tcc:
 
 /usr/include/c++/9/ext/aligned_buffer.h:
 
@@ -1338,13 +1334,13 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 
 /usr/include/c++/9/cstddef:
 
-/usr/include/eigen3/Eigen/Eigenvalues:
-
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/python3.8/sliceobject.h:
 
 /usr/include/c++/9/bits/basic_string.h:
+
+/usr/include/eigen3/Eigen/Eigenvalues:
 
 /usr/include/c++/9/cstring:
 
@@ -1389,8 +1385,6 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 /usr/include/c++/9/complex:
 
 /usr/include/glm/ext/matrix_double2x2.hpp:
-
-/usr/include/c++/9/bits/locale_classes.tcc:
 
 /usr/include/c++/9/tr1/poly_hermite.tcc:
 
@@ -1439,6 +1433,12 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 /usr/include/c++/9/bits/stl_map.h:
 
 /usr/include/glm/mat2x2.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/xmmintrin.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h:
+
+/home/ms/R_Pi_Src/dogo/src/include/matplotlibcpp.h:
 
 /usr/include/c++/9/bits/stl_iterator.h:
 
@@ -1555,6 +1555,10 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h:
 
 /usr/include/glm/ext/matrix_float3x3_precision.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
+
+/usr/include/c++/9/ext/alloc_traits.h:
 
 /usr/include/glm/ext/vector_uint4.hpp:
 
@@ -1687,10 +1691,6 @@ CMakeFiles/test1.dir/generate_cawl_gait_plot.cpp.o: /home/ms/R_Pi_Src/test/test_
 /usr/include/c++/9/limits:
 
 /usr/include/glm/detail/type_mat4x4.inl:
-
-/usr/include/c++/9/ext/alloc_traits.h:
-
-/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h:
 

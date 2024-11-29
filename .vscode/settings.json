@@ -6,6 +6,7 @@
         "ostream": "cpp",
         "cmath": "cpp",
         "limits": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "iostream": "cpp"
     }
 }

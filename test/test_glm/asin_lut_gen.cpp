@@ -46,6 +46,7 @@ int main(int argc, char** argv)
         {3, 3, 3},
         {4, 5, 6},
     });
+
     // glm::acos( (double) x);
     printf("hello world!\n");
     cout << B << endl;
@@ -54,5 +55,9 @@ int main(int argc, char** argv)
 
     cout << glm::pi<double>() << endl;
     cout << glm::mat4(1.0) << endl;
+    glm::vec3 U(1,2,3);
+    cout << C*U << endl;
+    cout << U*C << endl;
+    cout << C*glm::column(C, 0) << endl;
     return 0;
 }
