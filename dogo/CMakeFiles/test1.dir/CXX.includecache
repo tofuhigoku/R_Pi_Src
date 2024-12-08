@@ -59,6 +59,14 @@ unistd.h
 -
 eigen3/Eigen/Dense
 -
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/matrix_inverse.hpp
+-
+glm/gtc/type_ptr.hpp
+-
 api.h
 src/include/api.h
 data_struct.h

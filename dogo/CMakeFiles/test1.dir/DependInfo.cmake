@@ -14,6 +14,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "include"
   "src/include"
   "../include"
+  "/usr/lib"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hOwOka/R_Pi_Src/dogo/communication.cpp" "/home/hOwOka/R_Pi_Src/dogo/CMakeFiles/test1.dir/communication.cpp.o"
@@ -25,6 +26,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "include"
   "src/include"
   "../include"
+  "/usr/lib"
   )
 
 # Targets to which this target links.

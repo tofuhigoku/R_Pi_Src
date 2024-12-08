@@ -56,31 +56,34 @@ int main( int argc, char** argv)
     }
 
     uint8_t c =0;
-    while (1)
-    {
-        /* code */
-        spi_buffer_st.tx_buffer[0] = c++;
-        spi_buffer_st.tx_buffer[SPI_DATA_LEN-1] = c++;
-        ret = spi_device_TransmitReceive(fd0, &trx, NULL);
-        if(ret != MS_RETURN_OK) {
-            printf("SPI transfer returned %d...\r\n", ret);
-            break;
-        }
+    // while (1)
+    // {
+    //                             /**
+    //                              * This section is for spi communication testing
+    //                              */
+    //                             // /* code */
+    //                             // spi_buffer_st.tx_buffer[0] = c++;
+    //                             // spi_buffer_st.tx_buffer[SPI_DATA_LEN-1] = c++;
+    //                             // ret = spi_device_TransmitReceive(fd0, &trx, NULL);
+    //                             // if(ret != MS_RETURN_OK) {
+    //                             //     printf("SPI transfer returned %d...\r\n", ret);
+    //                             //     break;
+    //                             // }
 
-        printf("Received SPI buffer...\r\n");
-        for(int i =0; i < SPI_DATA_LEN ; i++) {
-            // printf("0x%02x ",rx_buffer[i]);
-            printf("%d ",spi_buffer_st.rx_buffer[i]);
-        }
-        printf("\r\n");
-        usleep(1000);
+    //                             // printf("Received SPI buffer...\r\n");
+    //                             // for(int i =0; i < SPI_DATA_LEN ; i++) {
+    //                             //     // printf("0x%02x ",rx_buffer[i]);
+    //                             //     printf("%d ",spi_buffer_st.rx_buffer[i]);
+    //                             // }
+    //                             // printf("\r\n");
+    //                             // usleep(1000);
 
-    }
+    // }
     
 
     close(fd0);
 
-    exit(EXIT_SUCCESS);
+    
 
     return ret;
 }
