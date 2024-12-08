@@ -35,4 +35,22 @@ linux/types.h
 -
 linux/spi/spidev.h
 -
+data_struct.h
+src/include/data_struct.h
+
+src/include/data_struct.h
+stdio.h
+src/include/stdio.h
+stdlib.h
+src/include/stdlib.h
+stdint.h
+-
+string.h
+src/include/string.h
+errno.h
+-
+fcntl.h
+-
+unistd.h
+-
 

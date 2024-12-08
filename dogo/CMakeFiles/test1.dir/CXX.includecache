@@ -57,15 +57,9 @@ fcntl.h
 -
 unistd.h
 -
-eigen3/Eigen/Dense
--
 glm/glm.hpp
 -
-glm/gtc/matrix_transform.hpp
--
-glm/gtc/matrix_inverse.hpp
--
-glm/gtc/type_ptr.hpp
+glm/trigonometric.hpp
 -
 api.h
 src/include/api.h
@@ -97,6 +91,8 @@ linux/types.h
 -
 linux/spi/spidev.h
 -
+data_struct.h
+src/include/data_struct.h
 
 src/include/data_struct.h
 stdio.h

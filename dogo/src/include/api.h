@@ -14,6 +14,8 @@
 #include <linux/types.h>
 #include <linux/spi/spidev.h>
 
+#include "data_struct.h"
+
 #define SPI_DEVICE0          "/dev/spidev0.0"
 #define SPI_DEVICE1          "/dev/spidev0.1"
 
@@ -28,6 +30,7 @@ typedef enum
 	MS_RETURN_INVALID,
 	MS_RETURN_FAIL,
 	MS_RETURN_NOT_SUPPORTED,
+	MS_RETURN_NOT_EQUAL,
 }MS_enum_return ;
 
 typedef struct 
@@ -40,5 +43,7 @@ typedef struct
 MS_enum_return spi_device_init(int* p_fd);
 MS_enum_return spi_device_TransmitReceive(int fd, struct spi_ioc_transfer* p_spi_ioc_transfer, int* NumOfsuccessBytes);
 
-
+uint32_t calculate_xor_checksum(uint32_t* p_data, size_t len);
+MS_enum_return Compare_checksum( uint32_t checksum_value1, uint32_t checksum_value2);
+MS_enum_return Spi_debug(spi_command_t* p_spi_command, spi_data_t* p_spi_data);
 #endif

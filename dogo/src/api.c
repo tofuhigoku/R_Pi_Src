@@ -97,3 +97,35 @@ MS_enum_return spi_device_TransmitReceive(int fd, struct spi_ioc_transfer* p_spi
 }
 
 
+
+uint32_t calculate_xor_checksum(uint32_t* p_data, size_t len)
+{
+    uint32_t t = 0;
+    for(int i = 0; i < len; i++)   
+        t = t ^ p_data[i];
+    return t;
+}
+MS_enum_return Compare_checksum( uint32_t checksum_value1, uint32_t checksum_value2)
+{
+    MS_enum_return ret = MS_RETURN_OK;
+    if(checksum_value1 == checksum_value2)
+    {
+        ret = MS_RETURN_OK;
+    }
+    else
+    {
+        ret = MS_RETURN_NOT_EQUAL;
+    }
+    return ret;
+}
+
+MS_enum_return Spi_debug(spi_command_t* p_spi_command, spi_data_t* p_spi_data)
+{
+    MS_enum_return ret = MS_RETURN_OK;
+    if(p_spi_command ==  NULL || p_spi_data == NULL)
+    {
+        ret = MS_RETURN_NULLPTR;
+    }
+
+    return ret;
+}
