@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+
 typedef struct	// size = 12 bytes
 {
 	float p;
@@ -44,6 +45,9 @@ typedef struct  // size = 3*20 = 60 bytes
 	
 }leg_control_t;
 
+
+
+
 typedef struct{
 	uint16_t CH_[7];    // raw data from mcu
 	// uint8_t XYZyaw_gait_sp_st[7];
@@ -53,6 +57,51 @@ typedef struct{
 
 }RX_signal_decode;
 
+
+
+typedef struct				// size = 84 bytes
+{
+//    float q_abad[2];
+//    float q_hip[2];
+//    float q_knee[2];
+//    float qd_abad[2];
+//    float qd_hip[2];
+//    float qd_knee[2];
+	
+		leg_data_t leg1_data;	// 36 bytes
+		leg_data_t leg2_data;	// 36 bytes
+	
+    int32_t flags[2];	// 8 bytes
+    int32_t checksum;	// 4 bytes
+	
+} spi_data_t ;
+
+
+typedef struct	// size = 132 bytes
+{
+//    float q_des_abad[2];
+//    float q_des_hip[2];
+//    float q_des_knee[2];
+//    float qd_des_abad[2];
+//    float qd_des_hip[2];
+//    float qd_des_knee[2];
+//    float kp_abad[2];
+//    float kp_hip[2];
+//    float kp_knee[2];
+//    float kd_abad[2];
+//    float kd_hip[2];
+//    float kd_knee[2];
+//    float tau_abad_ff[2];
+//    float tau_hip_ff[2];
+//    float tau_knee_ff[2];
+	
+		leg_control_t leg1_cmd;		// 60 bytes
+		leg_control_t leg2_cmd;		// 60 bytes
+	
+    int32_t flags[2];					// 8 bytes
+    uint32_t checksum;				// 4 bytes
+	
+} spi_command_t;
 
 
 #endif

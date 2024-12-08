@@ -1,5 +1,16 @@
 {
     "files.associations": {
+<<<<<<< HEAD
         "dense": "cpp"
+=======
+        "string.h": "c",
+        "stdlib.h": "c",
+        "stdint.h": "c",
+        "ostream": "cpp",
+        "cmath": "cpp",
+        "limits": "cpp",
+        "type_traits": "cpp",
+        "iostream": "cpp"
+>>>>>>> 5f0ae7acbfa6e3ca249a3da45668bca9b5a45fa1
     }
 }

@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wall -std=c++17  -lpthread -lrt CMakeFiles/test1.dir/generate_trot_gait_plot.cpp.o -o test1  /usr/lib/x86_64-linux-gnu/libpython3.8.so
